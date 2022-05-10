@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_baseline_home_24"
+            android:id="@+id/nav_home"
+            android:title="@string/acasa" />
+        <item
+            android:icon="@drawable/ic_baseline_playlist_add_check_24"
+            android:id="@+id/nav_coordonate"
+            android:title="@string/calculare_coordonate_user" />
+        <item
+            android:icon="@drawable/ic_baseline_food_bank_24"
+            android:id="@+id/nav_retete"
+            android:title="@string/retete" />
+
+        <item
+            android:icon="@drawable/ic_baseline_fitness_center_24"
+            android:id="@+id/nav_exercitii"
+            android:title="@string/exercitii_fizice_recomandate" />
+        <item
+            android:icon="@drawable/ic_baseline_graphic_eq_24"
+            android:id="@+id/nav_progres"
+            android:title="@string/adauga_progres_saptamanal" />
+
+        <item
+            android:icon="@drawable/ic_baseline_playlist_add_check_24"
+            android:id="@+id/nav_produse"
+            android:title="@string/vezi_produse" />
+
+        <item
+            android:icon="@drawable/ic_baseline_food_bank_24"
+            android:id="@+id/nav_meniu_zilnic"
+            android:title="@string/adauga_meniul_zilnic" />
+    </group>
+</menu>

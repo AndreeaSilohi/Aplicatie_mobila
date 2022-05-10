@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".optiuniMeniu.ProgresActivity">
+
+    <!--Ui component for our bar chart-->
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/idBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/text_background"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/text_background"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/genereaza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBarChart"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="14dp"
+        android:text="@string/arata" />
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBarChart"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginBottom="12dp"
+        android:hint="x"
+        android:inputType="numberSigned"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/greutate"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBarChart"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="12dp"
+        android:hint="y"
+        android:inputType="numberSigned"
+        android:minHeight="48dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/centimetru"
+
+
+  >
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_yourfitnessapp"
+        android:layout_margin="50dp"
+        android:gravity="center"
+        android:background="@drawable/text_background"
+        android:textColor="@color/black"
+        android:textSize="34dp"
+        android:textStyle="bold"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome"
+
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/SIGN_IN"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_in"
+
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/sign_upp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+
+</RelativeLayout>

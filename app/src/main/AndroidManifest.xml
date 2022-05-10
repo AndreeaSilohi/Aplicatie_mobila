@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication2register">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication2register">
+        <activity
+            android:name=".produse.Pachet1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".produse.Pachet3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".produse.Pachet2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".produse.ProduseDetoxActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DailyMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".utilReteta.RetetaProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.RetetaPuiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.SalataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.ConopidaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.PasteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.PolentaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.BiscuitiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.BudincaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.IaurtActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.BrioseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.ReteteBogateInFibreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.DesertActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.ReteteBogateInProteineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".optiuniMeniu.ProduseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.RetetaAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".retete.Reteta"
+            android:exported="false" />
+        <activity
+            android:name=".optiuniMeniu.CoordonateUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".optiuniMeniu.ProgresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".retete.ReteteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".optiuniMeniu.ExercitiiFiziceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activitati.MainActivity5"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityPerson"
+            android:exported="false" />
+        <activity
+            android:name=".optiuniMeniu.MainMenuActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_menu"
+            android:theme="@style/Theme.MyApplication2register.NoActionBar" />
+        <activity
+            android:name=".activitati.Authentication"
+            android:exported="false" />
+        <activity
+            android:name=".activitati.Registration"
+            android:exported="false" />
+        <activity
+            android:name=".activitati.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
