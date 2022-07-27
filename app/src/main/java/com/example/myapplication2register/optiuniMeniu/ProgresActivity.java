@@ -42,7 +42,9 @@ import com.example.myapplication2register.R;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ProgresActivity extends AppCompatActivity {
     public EditText xValue, yValue;
@@ -54,9 +56,8 @@ public class ProgresActivity extends AppCompatActivity {
     LineChart lineChart;
     LineDataSet lineDataSet=new LineDataSet(null,null);
     ArrayList<ILineDataSet>lineDataSets=new ArrayList<>();
+
     LineData lineData;
-
-
 
 
 
@@ -69,45 +70,49 @@ public class ProgresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progres);
 
-        btn = (Button) findViewById(R.id.genereaza);
+        btn =  findViewById(R.id.genereaza);
 
 
-        xValue = (EditText) findViewById(R.id.id);
-        yValue = (EditText) findViewById(R.id.greutate);
+        xValue =  findViewById(R.id.id);
+        yValue = findViewById(R.id.greutate);
 
-        t1 = findViewById(R.id.x);
-        t2 = findViewById(R.id.y);
+        //t1 = findViewById(R.id.x);
+        // t2 = findViewById(R.id.y);
         lineChart=findViewById(R.id.idBarChart);
 
-        reference = FirebaseDatabase.getInstance().getReference("chart");
+        reference = FirebaseDatabase.getInstance().getReference("grafic");
 
         rootNode = FirebaseDatabase.getInstance();
-        reference = rootNode.getReference("chart");
+        reference = rootNode.getReference("grafic");
 
 
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
-                rootNode=FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("chart");
-
+            public void onClick(View view) {
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("grafic");
+                if (yValue.length()>3) {
+                    yValue.setError("Numarul de kilograme trebuie sa aiba maxim 3 cifre");
+                }
                 String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                String id=reference.push().getKey();
-                x=Integer.parseInt(xValue.getText().toString());
-                y=Integer.parseInt(yValue.getText().toString());
+                String id = reference.push().getKey();
+                x = Integer.parseInt(xValue.getText().toString());
+                y = Integer.parseInt(yValue.getText().toString());
 
 
-                Input input=new Input(currentuser,x,y);
+                Input input = new Input(currentuser, x, y);
+
 
                 reference.child(id).setValue(input);
+
             }
         });
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
-                myList=new ArrayList<>();
+                //myList=new ArrayList<>();
                 ArrayList<Entry>data= new ArrayList<>();
 
                 for(DataSnapshot snapshot:datasnapshot.getChildren()){
@@ -116,35 +121,21 @@ public class ProgresActivity extends AppCompatActivity {
                     String user=snapshot.child("user").getValue().toString();
                     String xa = snapshot.child("x").getValue().toString();
                     String ya = snapshot.child("y").getValue().toString();
-                    // System.out.println("x este " + xa + " si y este " + ya);
+
                     Integer x = Integer.parseInt(xa);
                     Integer y = Integer.parseInt(ya);
 
                     float ht;
                     int wt;
                     Utils.init(getApplicationContext());
-                    ht =  (int)x * ((float) getApplicationContext().getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
-                    wt = (int) (y * ((float) getApplicationContext().getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT));
+                    ht =  x;
+                    wt = y;
                     if(currentuser.equals(user)) {
+
                         data.add(new Entry(ht, wt));
+
                     }
-
-
-
-
-
-                    // Input input = new Input(currentuser, x, y);
-                    // System.out.println(input);
-
-                    //myList.add(input);
-
-
-
                 }
-
-                //System.out.println(myList);
-                //Utils.init(getApplicationContext());
-
                 showChart(data);
             }
             @Override
@@ -152,20 +143,19 @@ public class ProgresActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
+    ArrayList<Entry>lista= new ArrayList<>();
 
     private void showChart(List<Entry> data) {
         Collections.sort(data, new EntryXComparator());
-        final LineDataSet set = new LineDataSet(data, "Accuracy");
+
+        final LineDataSet set = new LineDataSet(data, "Acuratete");
         Paint paint = lineChart.getRenderer().getPaintRender();
-        paint.setShader(new LinearGradient(0, 0, 0, 40, Color.GREEN, Color.RED, Shader.TileMode.REPEAT));
+        paint.setShader(new LinearGradient(0, 0, 0, 40, Color.GREEN, Color.CYAN, Shader.TileMode.REPEAT));
+
+        lineChart.getDescription().setText("Evolutia pe saptamani");
 
 
 
-
-        lineDataSet.setLabel("Evolutia pe saptamani a greutatii");
         lineDataSets.clear();
         lineDataSet.setValues(data);
         Utils.init(getApplicationContext());
@@ -173,18 +163,23 @@ public class ProgresActivity extends AppCompatActivity {
         lineData=new LineData(lineDataSets);
         lineChart.clear();
         //lineChart.setData(lineData);
-        set.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
-        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        set.setMode(LineDataSet.Mode.LINEAR);//horizontal
+        set.setAxisDependency(YAxis.AxisDependency.RIGHT);
         set.setLineWidth(3F);
-        set.setDrawCircleHole(false);
-        set.setDrawCircles(false);
-        set.setHighlightEnabled(false);
-        set.setDrawFilled(true);
+        set.setDrawCircleHole(true);//aici//aici era left
+        set.setDrawCircles(true);
+        set.setHighlightEnabled(true);//aici
+        set.setDrawFilled(true);//aicis
         final LineData group = new LineData(set);
-        group.setDrawValues(false);
-
+        group.setDrawValues(true);//aici
         lineChart.setData(group);
         lineChart.invalidate();
     }
+
+
+
+
+
+
 
 }

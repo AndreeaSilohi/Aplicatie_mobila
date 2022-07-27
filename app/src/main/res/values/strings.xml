@@ -1,25 +1,26 @@
 <resources>
-    <string name="app_name">My Application2register</string>
+    <string name="app_name">Aplicatie de remodelare corporala</string>
     <string name="SIGN_INN">sign_inn</string>
     <string name="sign_up">sign_up</string>
-    <string name="welcome_to_yourfitnessapp">Welcome to YourFitnessApp</string>
+    <string name="welcome_to_yourfitnessapp">Bun venit în aplicația ta!</string>
     <string name="OK">OK</string>
     <string name="Password">password</string>
-    <string name="SignIn">Sign In</string>
-    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="SignIn">Autentificare</string>
+    <string name="title_activity_main_menu">Meniu principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="hyperlink">Pentru mai multe informatii: <a href="https://www.mysnep.com/ro/3999218">www.mysnep.com/ro/3999218</a></string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="acasa">Acasa</string>
     <string name="retete">Retete</string>
-    <string name="calculare_coordonate_user">Calculare coordonate user</string>
+    <string name="calculare_coordonate_user">Indice de masa</string>
     <string name="exercitii_fizice_recomandate">Exercitii fizice recomandate</string>
     <string name="adauga_progres_saptamanal">Adauga progres saptamanal</string>
 
@@ -32,15 +33,15 @@
     <string name="new_save">new_save</string>
     <string name="greutate">greutate</string>
     <string name="inaltime">inaltime</string>
-    <string name="Start_your_journey_now">Start your journey now!</string>
+    <string name="Start_your_journey_now">Începe chiar acum!</string>
     <string name="Start">Start</string>
     <string name="your">" your"</string>
     <string name="Bunvenitinmeniultau">Bun venit in meniul tau!</string>
     <string name="Alegeooptiune">Alege o optiune:</string>
     <string name="retete_bogate_in_carbohidrati">Retete bogate in carbohidrati</string>
     <string name="retete_bogate_in_proteine">Retete bogate in proteine</string>
-    <string name="SIGN_IN">Sign in!</string>
-    <string name="sign_upp">Sign up!</string>
+    <string name="SIGN_IN">Autentificare</string>
+    <string name="sign_upp">Înregistrare</string>
     <string name="vezi_produse">Vezi produse detox</string>
     <string name="adauga_meniul_zilnic">Adauga meniul zilnic!</string>
     <string name="alege_un_desert">Desert</string>
@@ -64,13 +65,13 @@
     <string name="continut">continut</string>
     <string name="cont">Pisează babanele și amestecă-le cu restul ingredientelor. Din amestec formează biscuiți mici și așază-i pe o tavă tapetată cu hârtie de copt. Las-i în cuptorul preîncălzit la 170 de grade timp de 10-15 minute</string>
     <string name="contint">Untul de capră se lasă la temperatura camerei. Dacă se folosește unt de cacao se topește și se răcește. Apoi, cu mixerul, se combină cu siropul de agave și zahărul brun. Se adaugă pe rând câte un ou, apoi bananele zdrobite cu furculița.  În făină se adaugă bicarbonatul de sodiu și amidonul BIO și apoi se adaugă la restul ingredientelor. Se mai adaugă sarea, laptele de cocos sau iaurtul, extractul de vanilie și ciocolata zdrobită cu cuțitul.  Se amestecă până se obține o compoziție puțin lichidă. Se toarnă în forme de brioșe și se lasă la copt aproximativ 40 de minute.</string>
-    <string name="pass1">"  1.Pune semințele de chia într-un borcan, toarnă peste ele laptele împreună cu mierea. Amestecă tot cu ajutorul unei linguri până mierea se va dizolva. Acoperă borcanul cu un capac și pune-l la frigider peste noapte (în acest fel semințele se vor umfla și se vor înmuia, iar laptele va primi o consistență mai densă)."</string>
+    <string name="pass1">"  1.Pune semințele de chia într-un borcan, toarnă peste ele laptele împreună cu mierea. Amestecă tot cu ajutorul unei linguri până mierea se va dizolva. Acoperă borcanul cu un capac și pune-l la frigider peste noapte (în acest fel semințele se vor umfla și se vor înmuia, iar laptele va primi o consistență mai densă).  2.Cu câteva minute înainte să servești budincă de chia, pregătește piureul de mango: Curăță mango și taie-l în cubulețe. Rupe o banană în bolul unui blender, pune mango (păstrează câteva cubulețe pentru decor), toarnă apă plată și adaugă o linguriță de miere în caz că fructele nu sunt suficient de dulci. Mixează bine totul până primești un piure dens și fin."</string>
     <string name="pass2">"  2.Cu câteva minute înainte să servești budincă de chia, pregătește piureul de mango: Curăță mango și taie-l în cubulețe. Rupe o banană în bolul unui blender, pune mango (păstrează câteva cubulețe pentru decor), toarnă apă plată și adaugă o linguriță de miere în caz că fructele nu sunt suficient de dulci. Mixează bine totul până primești un piure dens și fin."</string>
     <string name="pass3">"  3.Ia un pahar potrivit și pune circa 3 linguri de budincă de chia, acoperă cu 3-4 linguri de piure de mango și decorează cu musli, cubulețe de mango, banane uscate, felii de cocos sau cu orice altceva dorești."</string>
     <string name="pass4">"  4.Servește budinca imediat. Poftă bună!"</string>
     <string name="pass">"Amestecă iaurtul cu mascarpone și siropul de agave. Peste presară semințe de chia după gust și ornează cu felii de banane și mango și câteva de afine.  "</string>
     <string name="Ingrediente">INGREDIENTE</string>
-    <string name="c">Într-o cratiță mică, amestecă polenta cu apă, sare și pudra de usturoi. Fierbe polenta până dă în clocot și până când absoarbe toată apa. Într-o cratiță, toarnă 3-5 linguri de apă peste spanac și ciuperci, adaugă puțină sare și condimentează după gust, apoi lasă-le să fiarbă acoperite până când se înmoaie (aproximativ 5 minute). La final, amestecă spanacul, ciupercile și polenta, iar deasupra presară o lingură cu vârf de parmezan dat pe răzătoare.</string>
+    <string name="c">Mod de preparare: Într-o cratiță mică, amestecă polenta cu apă, sare și pudra de usturoi. Fierbe polenta până dă în clocot și până când absoarbe toată apa. Într-o cratiță, toarnă 3-5 linguri de apă peste spanac și ciuperci, adaugă puțină sare și condimentează după gust, apoi lasă-le să fiarbă acoperite până când se înmoaie (aproximativ 5 minute). La final, amestecă spanacul, ciupercile și polenta, iar deasupra presară o lingură cu vârf de parmezan dat pe răzătoare.</string>
     <string name="Paste_cremoase_fit_cu_zucchini">Paste cremoase fit cu zucchini</string>
     <string name="cc">Într-un castron mai mare, amestecă iaurtul cu ouăle, brânză dată pe răzătoare, cățeii de usturoi pisați, condimentele, verdețurile și sarea. Desfă conopida și broccoli-ul în buchețele, spală-le și taie-le în bucățele. Amestecă-le cu sosul pregătit anterior, apoi toarnă compoziția într-o tavă pentru copt (cu dimensiunile de aproximativ 35 x 25 cm). Coace amestecul timp de 40-50 minute la 180 de grade până când se rumenește.</string>
     <string name="cp">Spală somonul la robinet și așează-l într-o tavă pentru copt. Deasupra poți presăra puțină sare și piper negru măcinat. Coace somonul acoperit cu folie de aluminiu timp de 15 minute la 200 de grade. Fierbe bulgurul sau quinoa într-o cantitate dublă de apă până când se înmoaie (aproximativ 12 minute). Într-un castron, amestecă ingredientele pentru sos. Adaugă amestecul asiatic de legume, avocado tăiat mărunt, ceapa verde mărunțită și arahidele. La final, adaugă bulgurul fiert sau quinoa fiartă și bucățelele de somon la cuptor. Amestecă bine salata pentru ca aromele să se întrepătrundă și servește-o imediat după preparare.</string>
@@ -80,7 +81,7 @@
     <string name="sos">Pentru sos:</string>
     <string name="reteta">Spală bine portocalele, apoi șterge-le. Taie pieptul de pui în “nuggets” mai mici pe care apoi le înmoi în ingredientele pentru marinată. Lasă carnea să se înmoaie în marinată, ideal ar fi timp de cel puțin 2 ore. Dă bucățile de nugget marinate prin ou și apoi prin firimituri sau migdale măcinate. Așează bucățile de pui într-o tavă tapetată cu hârtie pentru copt și coace-le timp de 30-35 de minute la 190 grade până când devin crocante. La jumătatea perioadei de coacere, le poți întoarce pe cealaltă parte. Între timp, fierbe quinoa în apă împreună cu sarea și condimentele, sau pregătește o altă garnitură, în funcție de preferințe. Într-o tigaie adâncă, toarnă supa de legume, adaugă sucul de portocale și coaja de portocală, lasă-le să fiarbă, apoi adaugă mierea. La final, adaugă în sos amidonul amestecat cu 2 linguri de apă. Fierbe sosul până când se îngroașă, apoi dă-l deoparte de pe foc. Servește nuggets de pui la cuptor împreună cu sosul de portocale.</string>
     <string name="Calculeaza">Calculeaza indicele IMC!</string>
-    <string name="password">Password</string>
+    <string name="password">Parola</string>
     <string name="clear_fields">Clear!</string>
     <string name="registration">Registration</string>
     <string name="main_name">Name</string>
@@ -99,5 +100,25 @@
     <string name="gere">genereaza</string>
     <string name="detalii">Detalii</string>
     <string name="Adauga">Adauga</string>
+    <string name="Delete">Delete</string>
+    <string name="info">Informatii cont</string>
+    <string name="preparare">Mod de preparare:Într-un castron mai mare, amestecă iaurtul cu ouăle, brânză dată pe răzătoare, cățeii de usturoi pisați, condimentele, verdețurile și sarea. Desfă conopida și broccoli-ul în buchețele, spală-le și taie-le în bucățele. Amestecă-le cu sosul pregătit anterior, apoi toarnă compoziția într-o tavă pentru copt (cu dimensiunile de aproximativ 35 x 25 cm). Coace amestecul timp de 40-50 minute la 180 de grade până când se rumenește.</string>
+    <string name="Salata">Salata asiatica calda cu somon</string>
+    <string name="preparare3">" 1.Pune semințele de chia într-un borcan, toarnă peste ele laptele împreună cu mierea. Amestecă tot cu ajutorul unei linguri până mierea se va dizolva. Acoperă borcanul cu un capac și pune-l la frigider peste noapte (în acest fel semințele se vor umfla și se vor înmuia, iar laptele va primi o consistență mai densă)."</string>
+    <string name="ingrediente1">"  Ingrediente:500 g broccoli, 500 g zucchini dat pe răzătoare, 400 g iaurt simplu (cu un conținut de grăsime de cel puțin 3%),1 linguriță sare,2 ouă,150 g mozzarella dată pe răzătoare (sau alt tip de brânză),2 căței de usturoi,1/4 linguriță piper negru măcinat,verdețuri proaspete (în funcție de preferințe)"</string>
+    <string name="ingrediente2">Ingrediente:30 g arahide 1 avocado copt 1 ceapă verde 200 g file de somon 150 g mix asiatic pentru salate (morcovi, salată iceberg, varză, praz) 130 g bulgur sau quinoa</string>
+    <string name="nume">Nume Reteta</string>
+    <string name="recipeName">Nume Reteta</string>
+    <string name="ingredients">Ingredeinte</string>
+    <string name="retete_program">Retete recomandate pe parcursul dietei</string>
+    <string name="sectiuni">Secțiuni de interes</string>
+    <string name="exercitii">Exerciții fizice</string>
+    <string name="produse_detox">Produse detoxifiere</string>
+    <string name="Editare_informatii_retete">Editare informatii retete</string>
+    <string name="Editare_informatii_produse">Editare informatii produse</string>
+    <string name="Editare_informatii_video">Editare informatii video</string>
+    <string name="Sterge_Cont">Sterge cont</string>
+    <string name="Delogare">Delogare</string>
+    <string name="Inregistrare">INREGISTRARE</string>
 
 </resources>

@@ -1,101 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blur2"
     tools:context=".retete.ReteteActivity">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/text_background"
-        android:gravity="center"
-        android:text="Retete"
-        android:textColor="@color/black"
-        android:textSize="45dp"
-        android:textStyle="bold"
-        android:typeface="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        android:hint="Search"
+        android:textSize="22sp"
+        android:id="@+id/txt_searchtext"
+        android:layout_margin="15dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
-    <Button
-        android:id="@+id/b1"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="185dp"
-        android:layout_height="79dp"
-        android:layout_below="@id/textView2"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="124dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/retete_bogate_in_fibre"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:typeface="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateClickableBoundsCheck" />
-
-    <Button
-        android:id="@+id/b2"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="203dp"
-        android:layout_height="73dp"
-        android:layout_below="@id/b1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="224dp"
-        android:text="@string/retete_bogate_in_proteine"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:typeface="serif"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/b3"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="192dp"
-        android:layout_height="61dp"
-        android:layout_below="@id/textView2"
-        android:layout_marginTop="332dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/alege_un_desert"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:typeface="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ListView
-        android:id="@+id/retete_list"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/b2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@+id/txt_searchtext"
+        android:scrollbars="vertical"
 
-        app:layout_constraintTop_toTopOf="parent"/>
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

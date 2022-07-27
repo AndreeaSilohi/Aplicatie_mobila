@@ -7,15 +7,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.myapplication2register.DailyMenuActivity;
-import com.example.myapplication2register.produse.ProduseDetoxActivity;
+import com.example.myapplication2register.MeniuZilnic;
+import com.example.myapplication2register.InformatiiContActivity;
 import com.example.myapplication2register.R;
-import com.example.myapplication2register.activitati.MainActivity5;
+import com.example.myapplication2register.logare.MainActivity5;
 import com.example.myapplication2register.fragmente.HFragment;
+import com.example.myapplication2register.produse.ProduseDetoxActivity;
 import com.example.myapplication2register.retete.ReteteActivity;
+
+import com.example.myapplication2register.administrator.VideosActivity;
+import com.example.myapplication2register.video.ShowVideoActivity;
 import com.github.mikephil.charting.utils.Utils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -43,35 +48,28 @@ public class MainMenuActivity extends AppCompatActivity {
     private ActivityResultLauncher<Intent> newMainActivityLauncher;
     private List<Persoana> persons = new ArrayList<>();
     private Fragment currentFragment;
+    FirebaseAuth auth;
+    //public FloatingActionButton logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        auth=FirebaseAuth.getInstance();
         initialComponents();
        // openDefaultFragment(savedInstanceState);
         navigationView.bringToFront();
 
-
-
     }
-
-//    private void openDefaultFragment(Bundle savedInstanceState) {
-//        if (savedInstanceState == null) {
-//            //incarcarea unui fragment default
-////           // currentFragment = HFragment.newInstance((ArrayList<Expense>) persons);
-////            openFragment();
-////            navigationView.setCheckedItem(R.id.nav_view);
-//        }
-//    }
 
     private void initialComponents() {
         configurareNavigare();
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(getNavigationItemSelectedListener());
 //        navigationView.setNavigationItemSelectedListener(onNavigationItemSelected(onMenuItemSelected(getNavigationItemSelectedListener());
-        fabNewP = findViewById(R.id.fab);
-        fabNewP.setOnClickListener(getNewExpenseClickListener());
+       // fabNewP = findViewById(R.id.fab);
+       // fabNewP.setOnClickListener(getNewExpenseClickListener());
         newMainActivityLauncher = getNewMainActivityLauncher();
 
     }
@@ -131,14 +129,15 @@ public class MainMenuActivity extends AppCompatActivity {
         return new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if(item.getItemId()==R.id.nav_home)
-                {
-
-                    Log.i("MainMenuActivity","Home is selected");
-                    //currentFragment = HFragment.newInstance((ArrayList<Expense>) persons);
-                    Intent intent2=new Intent(MainMenuActivity.this, ExercitiiFiziceActivity.class);
-                    startActivity(intent2);
-                }else if (item.getItemId()==R.id.nav_retete)
+//                if(item.getItemId()==R.id.nav_home)
+//                {
+//
+//                    Log.i("MainMenuActivity","Home is selected");
+//                    //currentFragment = HFragment.newInstance((ArrayList<Expense>) persons);
+//                    Intent intent2=new Intent(MainMenuActivity.this, MainMenuActivity.class);
+//                    startActivity(intent2);
+//                }else
+                    if (item.getItemId()==R.id.nav_retete)
                 {
                     Log.i("MainMenuActivity","Retete is selected");
                     Intent intent=new Intent(MainMenuActivity.this, ReteteActivity.class);
@@ -147,7 +146,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 }
                 else if (item.getItemId()==R.id.nav_exercitii)
                 {
-                    Intent intent2=new Intent(MainMenuActivity.this,ExercitiiFiziceActivity.class);
+                    Intent intent2=new Intent(MainMenuActivity.this, ShowVideoActivity.class);
                     startActivity(intent2);
 
                 }
@@ -161,12 +160,16 @@ public class MainMenuActivity extends AppCompatActivity {
                     startActivity(intent4);
                 }
               else if(item.getItemId()==R.id.nav_meniu_zilnic){
-                  Intent intent5=new Intent(MainMenuActivity.this, DailyMenuActivity.class);
+                  Intent intent5=new Intent(MainMenuActivity.this, MeniuZilnic.class);
                   startActivity(intent5);
                 }
               else if(item.getItemId()==R.id.nav_produse){
                     Intent intent6=new Intent(MainMenuActivity.this, ProduseDetoxActivity.class);
                     startActivity(intent6);
+                }
+                else if(item.getItemId()==R.id.nav_info){
+                    Intent intent7=new Intent(MainMenuActivity.this, InformatiiContActivity.class);
+                    startActivity(intent7);
                 }
 
                 Toast.makeText(getApplicationContext(),getString(R.string.main_message,item.getTitle()),Toast.LENGTH_SHORT).show();

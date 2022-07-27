@@ -1,120 +1,123 @@
 package com.example.myapplication2register.retete;
 
-import androidx.activity.result.ActivityResultLauncher;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import com.example.myapplication2register.R;
+import com.example.myapplication2register.administrator.MainActivityReteta;
+import com.example.myapplication2register.administrator.MyAdapter;
+import com.example.myapplication2register.administrator.RetetaPentruAdmin;
+import com.example.myapplication2register.logare.Authentication;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ReteteActivity extends AppCompatActivity {
+    private FloatingActionButton button;
+    RecyclerView mRecyclerView;
+    List<RetetaPentruAdmin> myFoodList;
+    RetetaPentruAdmin mRetetaPentruAdmin;
 
+    private DatabaseReference databaseReference;
+    private ValueEventListener eventListener;
+    ProgressDialog progressDialog;
+   AdapterClientReteta myAdapter;
 
-    private Button b1;
-    private Button b2;
-    private Button b3;
-
-
-    private List<Reteta> reteteList = new ArrayList<>();
-    private ActivityResultLauncher<Intent> addRetetaLauncher;
-    private ListView lvreteta;
-
+    private EditText txt_search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retete);
 
+        mRecyclerView=findViewById(R.id.recyclerView);
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(ReteteActivity.this,1);
+        mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        lvreteta = findViewById(R.id.retete_list);
-        b1 = findViewById(R.id.b1);
-        b2 = findViewById(R.id.b2);
-        b3=findViewById(R.id.b3);
+        txt_search=findViewById(R.id.txt_searchtext);
+        button=findViewById(R.id.uploadActivity);
+
+        myFoodList=new ArrayList<>();
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Loading items...");
 
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        myAdapter=new AdapterClientReteta(ReteteActivity.this,myFoodList);
+        mRecyclerView.setAdapter(myAdapter);
+
+
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("retete");
+
+        progressDialog.show();
+
+        eventListener=databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(ReteteActivity.this, "Optiune selectata!", Toast.LENGTH_SHORT).show();
-                Intent intent1= new Intent(getApplicationContext(), ReteteBogateInFibreActivity.class);
-                startActivity(intent1);
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                myFoodList.clear();
+
+                for(DataSnapshot itemSnapshot :dataSnapshot.getChildren()){
+                    RetetaPentruAdmin retetaPentruAdmin=itemSnapshot.getValue(RetetaPentruAdmin.class);
+                    retetaPentruAdmin.setKeyR(itemSnapshot.getKey());
+                    myFoodList.add(retetaPentruAdmin);
+                }
+
+                myAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
+        txt_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
             }
         });
 
+    }
 
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(ReteteActivity.this, "Optiune selectata!", Toast.LENGTH_SHORT).show();
-                Intent intent2= new Intent(getApplicationContext(), ReteteBogateInProteineActivity.class);
-                startActivity(intent2);
+    private void filter(String text) {
+        ArrayList<RetetaPentruAdmin>filterList=new ArrayList<>();
 
+        for (RetetaPentruAdmin item:myFoodList){
+            if(item.getItemDescription().toLowerCase().contains(text.toLowerCase())){
+                filterList.add(item);
             }
+        }
+        myAdapter.filteredList(filterList);
 
-
-        });
-
-
-
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(ReteteActivity.this, "Optiune selectata!", Toast.LENGTH_SHORT).show();
-                Intent intent3 = new Intent(getApplicationContext(), DesertActivity.class);
-                startActivity(intent3);
-
-            }
-
-
-        });
     }
-
-    private void notifyLvStudentAdapter() {
-        ArrayAdapter adapter = (ArrayAdapter) lvreteta.getAdapter();
-        adapter.notifyDataSetChanged();
-    }
-
-
-//    private ActivityResultLauncher<Intent> registerAddSkinResultLaucncher() {
-//       // ActivityResultCallback<ActivityResult> callback = getAddReteteActiviyResultCallback();
-//        //return registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), callback);
-//    }
-
-
-//    private ActivityResultCallback<ActivityResult> getAddReteteActiviyResultCallback() {
-//        return new ActivityResultCallback<ActivityResult>() {
-//            @Override
-//            public void onActivityResult(ActivityResult result) {
-//                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-//                    Reteta r=(SkinCare) result.getData().getSerializableExtra(MainActivity3.ADD_SKINCARE_KEY);
-////                    if (r != null) {
-////                        reteteList.add(r);
-////                        notifyLvStudentAdapter();
-////                    }
-//
-//                }
-//            }
-//        };
-    }
-
-
-
-//    private void addLvSkinAdapter() {
-////        ArrayAdapter<SkinCare> adapter = new ArrayAdapter<>(getApplicationContext(),
-////                android.R.layout.simple_list_item_1, skinCareList);
-//        RetetaAdapter retetaAdapter=new RetetaAdapter(getApplicationContext(),
-//                R.layout.re,skinCareList,getLayoutInflater());
-//        lvreteta.setAdapter(retetaAdapter);
-//    }
-//
-//
-//}
+}

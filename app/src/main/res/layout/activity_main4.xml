@@ -5,20 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginnou"
-    tools:context=".activitati.Registration">
+    tools:context=".logare.Registration">
 
     <TextView
         android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Type your email and password!"
-        android:layout_margin="50dp"
-        android:gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/text_background"
+        android:gravity="center"
+        android:text="Introdu email-ul și parola!"
         android:textColor="@color/black"
         android:textSize="30dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="italic" />
 
 
     <EditText
@@ -62,15 +64,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/purple_200"
         android:gravity="center"
-        android:layout_centerHorizontal="true"
         android:text="@string/SignIn"
         android:textColor="@color/black"
         android:textColorHint="@color/black" />
-
-
 
 </RelativeLayout>

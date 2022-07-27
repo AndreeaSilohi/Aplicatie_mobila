@@ -5,85 +5,93 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/shake"
-        tools:context=".DailyMenuActivity">
+        android:background="@drawable/background"
+        tools:context=".MeniuZilnic">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
         <EditText
             android:id="@+id/aliment1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:inputType="text"
-            android:layout_below="@id/user"
             android:layout_margin="12dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="12dp"
-            android:hint="Introdu alimentul"
+            android:hint="Micul-dejun este.."
             android:padding="22dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:drawablePadding="20dp"
             />
-
-
 
 
         <EditText
             android:id="@+id/aliment2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:inputType="text"
-            android:layout_below="@id/user"
             android:layout_margin="12dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="12dp"
-            android:hint="Introdu alimentul"
-            android:padding="22dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
             android:drawablePadding="20dp"
-            />
+            android:hint="Gustarea 1 este.."
+            android:inputType="text"
+            android:padding="22dp"
 
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/aliment3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:inputType="text"
             android:layout_below="@id/user"
             android:layout_margin="12dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="12dp"
-            android:hint="Introdu alimentul"
+            android:drawablePadding="20dp"
+            android:hint="Pranzul este.."
+            android:inputType="text"
             android:padding="22dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:drawablePadding="20dp"
-            />
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/aliment4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:inputType="text"
             android:layout_below="@id/user"
             android:layout_margin="12dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="12dp"
-            android:hint="Introdu alimentul"
+            android:drawablePadding="20dp"
+            android:hint="Gustarea 2 este.."
+            android:inputType="text"
             android:padding="22dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/aliment5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user"
+            android:layout_margin="12dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="12dp"
             android:drawablePadding="20dp"
-            />
+            android:hint="Cina este.."
+            android:inputType="text"
+            android:padding="22dp"
+
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
 
         <Button
@@ -95,6 +103,7 @@
             android:layout_marginEnd="8dp"
             android:background="@color/design_default_color_primary"
             android:text="@string/Post"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.598"
             app:layout_constraintStart_toStartOf="@id/aliment4"
