@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/admin"
+    tools:context=".administrator.AdministratorActivity">
+
+    <Button
+        android:id="@+id/editare_reteta"
+        android:layout_width="250dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="308dp"
+        android:backgroundTint="@color/roz"
+        android:hint="@string/Editare_informatii_retete"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/editare_produs"
+        android:layout_width="250dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="372dp"
+        android:backgroundTint="@color/roz"
+        android:hint="@string/Editare_informatii_produse"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/editare_video"
+        android:layout_width="250dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="444dp"
+        android:hint="@string/Editare_informatii_video"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/roz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="250dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/roz"
+        android:hint="@string/Delogare"
+        android:textColor="@color/black"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
